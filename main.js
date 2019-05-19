@@ -1,15 +1,20 @@
 var boxcount=6;
 var rc;
+var play;
 boxsetup();
 easy.addEventListener("click",function(){
     boxcount=3;
     document.querySelector("#downbox").style.display="none";
     boxsetup();
+    document.querySelector("#top1").style.background="linear-gradient(to right,red,green,yellow)";
+    play.textContent="Play";
 });
 hard.addEventListener("click",function(){
     boxcount=6;
     document.querySelector("#downbox").style.display="block";
     boxsetup();
+    document.querySelector("#top1").style.background="linear-gradient(to right,red,green,yellow)";
+    play.textContent="Play";
 });
 function generaterandomcolor(num)
 {
@@ -31,7 +36,7 @@ var easy=document.querySelector("#easy");
 var colors=generaterandomcolor(boxcount);
 var boxes= document.querySelectorAll("#box div div");
 var header=document.querySelector("#top1");
-var play=document.querySelector("#play");
+play=document.querySelector("#play");
 for(var i=0;i< boxcount;i++)
 {
     boxes[i].style.backgroundColor=colors[i];
